@@ -1,0 +1,14 @@
+# GitHub Classroom Autograder Configuration
+
+name: "Maze-Solving Robot Autograder"
+timeout: 120
+
+tests:
+  - name: "Compilation Check"
+    run: "bash tests/autograder/check_compiles.sh"
+
+  - name: "Function Presence Check"
+    run: "bash tests/autograder/check_functions.sh"
+
+  - name: "Style Check"
+    run: "bash tests/autograder/check_style.sh"
