@@ -6,7 +6,7 @@ This document provides exemplars demonstrating Band 6-level student work for mod
 
 ---
 
-## 1. Exemplar Wiring Diagram (ASCII)
+## ✅ 1. Exemplar Wiring Diagram (ASCII)
 
 ```mermaid
 flowchart TD
@@ -52,7 +52,7 @@ flowchart TD
 
 ---
 
-## 2. Exemplar State Machine Diagram (Left‑Hand Rule Logic)
+## ✅ 2. Exemplar State Machine Diagram (Left‑Hand Rule Logic)
 
 ```mermaid
 stateDiagram-v2
@@ -75,7 +75,7 @@ stateDiagram-v2
     TurnAround --> ReadSensors
 ```
 
-## 3. Exemplar Flowchart
+## ✅ 3. Exemplar Flowchart
 
 ```mermaid
 flowchart TD
@@ -107,7 +107,7 @@ if (!leftWallDetected()) {
 }
 ```
 
-## 5. Exemplar Testing Logbook Entry
+##  ✅ 5. Exemplar Testing Logbook Entry
 
 Date: Week 6
 
@@ -124,7 +124,7 @@ Outcome: Robot now turns correctly.
 
 ---
 
-## 6. Exemplar Reflection (Band 6)
+##  ✅ 6. Exemplar Reflection (Band 6)
 The most challenging part was tuning the ultrasonic sensor. 
 
 Early tests showed inconsistent readings due to incorrect mounting height. 
@@ -134,3 +134,68 @@ After adjusting the angle and adding a small foam stabiliser, readings became re
 This improved the robot’s ability to detect front walls and reduced incorrect right turns.
 
 ---
+
+##  ✅ 7. Exemplar Mermaid Class Diagram (Modular Arduino Code Architecture)**
+
+```mermaid
+classDiagram
+    class Robot {
+        +loop()
+        +setup()
+    }
+
+    class MotorControl {
+        +initMotors()
+        +forward()
+        +turnLeft()
+        +turnRight()
+        +turnAround()
+        +stopRobot()
+    }
+
+    class Sensors {
+        +initSensors()
+        +getFrontDistance()
+        +leftWallDetected()
+        +rightWallDetected()
+    }
+
+    class Utils {
+        +initUtils()
+        +debugPrint()
+    }
+
+    Robot --> MotorControl : uses
+    Robot --> Sensors : reads
+    Robot --> Utils : logs
+```
+
+---
+
+## ✅ 8. Exemplar Mermaid Gantt Chart (8‑Week Mechatronics Unit)**
+
+
+---
+
+# ✅ **3. Mermaid Gantt Chart (8‑Week Mechatronics Unit)**
+
+```mermaid
+gantt
+    dateFormat  YYYY-MM-DD
+    title 8-Week Mechatronics & Maze-Solving Robot Unit
+
+    section Foundations
+    Week1:done,  w1, 2026-02-01, 7d
+    Week2:done,  w2, 2026-02-08, 7d
+
+    section Hardware & Sensors
+    Week3:active, w3, 2026-02-15, 7d
+    Week4:active, w4, 2026-02-22, 7d
+
+    section Algorithms & Coding
+    Week5: w5, 2026-03-01, 7d
+    Week6: w6, 2026-03-08, 7d
+
+    section Integration & Testing
+    Week7: w7, 2026-03-15, 7d
+    Week8: w8, 2026-03-22, 7d
