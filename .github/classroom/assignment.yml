@@ -1,0 +1,66 @@
+# ============================================================
+# GitHub Classroom Assignment Configuration
+# Maze-Solving Robot – Year 10 Computing Technology
+# Sydney Technical High School
+# ============================================================
+
+title: "Maze-Solving Robot (Keyestudio Arduino Kit)"
+description: "Students design, wire, and program a robot using ultrasonic and IR sensors to navigate a maze via the Left-Hand Rule. Includes modular code, hardware guides, wiring diagrams, tests, and full documentation."
+
+# Starter files provided to students
+starter_files:
+  - docs/01_project_brief.md
+  - docs/02_hardware_guide.md
+  - docs/03_wiring_diagram.md
+  - docs/04_algorithm_design.md
+  - docs/05_testing_plan.md
+  - docs/06_reflection.md
+
+  - src/robot_maze_solver.ino
+  - src/motor_control.h
+  - src/motor_control.cpp
+  - src/sensors.h
+  - src/sensors.cpp
+  - src/utils.h
+
+  - tests/test_motor_control.md
+  - tests/test_sensor_values.md
+  - tests/test_algorithm_logic.md
+
+  - tests/autograder/config.yml
+  - tests/autograder/check_compiles.sh
+  - tests/autograder/check_functions.sh
+  - tests/autograder/check_style.sh
+
+# Visibility settings
+# Students receive all starter files but cannot see hidden tests
+visibility:
+  files:
+    - path: "tests/autograder"
+      visible: false
+
+# Autograding configuration
+autograding:
+  setup: |
+    echo "Setting up Arduino CLI..."
+    arduino-cli core update-index
+    arduino-cli core install arduino:avr
+
+  tests:
+    - name: "Compilation Check"
+      run: "bash tests/autograder/check_compiles.sh"
+      timeout: 30
+
+    - name: "Function Presence Check"
+      run: "bash tests/autograder/check_functions.sh"
+      timeout: 20
+
+    - name: "Style Check"
+      run: "bash tests/autograder/check_style.sh"
+      timeout: 20
+
+# Student submission settings
+# Students submit their modified src/ files and documentation
+student_files:
+  - src/
+  - docs/
