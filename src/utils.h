@@ -1,11 +1,19 @@
 // =====================================================
-//  Utility Functions Header
+//  Utility Functions Implementation
 // =====================================================
 
-#ifndef UTILS_H
-#define UTILS_H
+#include "utils.h"
+#include <Arduino.h>
 
-void initUtils();
-void debugPrint(bool leftWall, bool rightWall, long frontDist);
+void initUtils() {
+  Serial.begin(9600);
+}
 
-#endif
+void debugPrint(bool leftWall, bool rightWall, long frontDist) {
+  Serial.print("Left: ");
+  Serial.print(leftWall);
+  Serial.print(" | Right: ");
+  Serial.print(rightWall);
+  Serial.print(" | FrontDist: ");
+  Serial.println(frontDist);
+}
